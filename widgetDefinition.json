@@ -1,0 +1,217 @@
+{
+ "widgetMaps": [
+  {
+   "id": "button_on_off_490b4121-5939-4867-958e-4667535e5464",
+   "type": "button",
+   "evts": [
+    "click"
+   ],
+   "recallRate": 250,
+   "functionText": "on_off",
+   "customFunctionText": null,
+   "boundFunctions": "click_on_off",
+   "buttonReadback": "",
+   "keyCode": "",
+   "keyName": "",
+   "visibleWhen": "true"
+  },
+  {
+   "type": "led",
+   "id": "led_led_on_01ed06df-5c55-406c-89d4-f8f47306b303",
+   "visibleWhen": "led_on=on",
+   "ledKey": "led_on",
+   "ledColor": "lightgreen"
+  },
+  {
+   "type": "numericdisplay",
+   "id": "numericdisplay_kvp_display_9cd5e498-8822-4078-9128-5d4a9e52bdc0",
+   "displayKey": "kvp_display",
+   "cursorName": "",
+   "auditoryFeedback": "disabled",
+   "visibleWhen": "led_on = on",
+   "fontsize": "20",
+   "fontColor": "white",
+   "backgroundColor": "transparent"
+  },
+  {
+   "id": "button_kvp_UP_47c9484a-14ff-4e9e-fc30-f1e748406f24",
+   "type": "button",
+   "evts": [
+    "click"
+   ],
+   "recallRate": 250,
+   "functionText": "kvp_UP",
+   "customFunctionText": null,
+   "boundFunctions": "click_kvp_UP",
+   "buttonReadback": "",
+   "keyCode": "",
+   "keyName": "",
+   "visibleWhen": "true"
+  },
+  {
+   "id": "button_kvp_DOWN_1c11a948-814d-446f-db92-fdd4e4044307",
+   "type": "button",
+   "evts": [
+    "click"
+   ],
+   "recallRate": 250,
+   "functionText": "kvp_DOWN",
+   "customFunctionText": null,
+   "boundFunctions": "click_kvp_DOWN",
+   "buttonReadback": "",
+   "keyCode": "",
+   "keyName": "",
+   "visibleWhen": "true"
+  },
+  {
+   "type": "numericdisplay",
+   "id": "numericdisplay_ma_display_7a3c1eec-4637-4fa5-d2dc-9dc7ef633e96",
+   "displayKey": "ma_display",
+   "cursorName": "",
+   "auditoryFeedback": "disabled",
+   "visibleWhen": "led_on = on",
+   "fontsize": "20",
+   "fontColor": "white",
+   "backgroundColor": "transparent"
+  },
+  {
+   "id": "button_ma_UP_46156b3c-c5df-45c4-eff3-a160d48fa46f",
+   "type": "button",
+   "evts": [
+    "click"
+   ],
+   "recallRate": 250,
+   "functionText": "ma_UP",
+   "customFunctionText": null,
+   "boundFunctions": "click_ma_UP",
+   "buttonReadback": "",
+   "keyCode": "",
+   "keyName": "",
+   "visibleWhen": "true"
+  },
+  {
+   "id": "button_ma_DOWN_e35ecf38-343e-4c5d-c304-91cbd2f3fb7a",
+   "type": "button",
+   "evts": [
+    "click"
+   ],
+   "recallRate": 250,
+   "functionText": "ma_DOWN",
+   "customFunctionText": null,
+   "boundFunctions": "click_ma_DOWN",
+   "buttonReadback": "",
+   "keyCode": "",
+   "keyName": "",
+   "visibleWhen": "true"
+  },
+  {
+   "type": "numericdisplay",
+   "id": "numericdisplay_mas_display_261480d7-9f6e-469a-ae20-57829e0dd713",
+   "displayKey": "mas_display",
+   "cursorName": "",
+   "auditoryFeedback": "disabled",
+   "visibleWhen": "led_on=on",
+   "fontsize": "20",
+   "fontColor": "white",
+   "backgroundColor": "transparent"
+  },
+  {
+   "id": "button_mas_UP_acc99900-27d7-44b0-a0da-1ec997781d9c",
+   "type": "button",
+   "evts": [
+    "click"
+   ],
+   "recallRate": 250,
+   "functionText": "mas_UP",
+   "customFunctionText": null,
+   "boundFunctions": "click_mas_UP",
+   "buttonReadback": "",
+   "keyCode": "",
+   "keyName": "",
+   "visibleWhen": "true"
+  },
+  {
+   "id": "button_mas_DOWN_eb72ff3b-125a-42e1-c26b-02f6b02f8962",
+   "type": "button",
+   "evts": [
+    "click"
+   ],
+   "recallRate": 250,
+   "functionText": "mas_DOWN",
+   "customFunctionText": null,
+   "boundFunctions": "click_mas_DOWN",
+   "buttonReadback": "",
+   "keyCode": "",
+   "keyName": "",
+   "visibleWhen": "true"
+  }
+ ],
+ "regionDefs": [
+  {
+   "class": "button_on_off_490b4121-5939-4867-958e-4667535e5464",
+   "shape": "rect",
+   "coords": "402.3,48.5,453.3,100.5",
+   "href": null
+  },
+  {
+   "class": "led_led_on_01ed06df-5c55-406c-89d4-f8f47306b303",
+   "shape": "rect",
+   "coords": "440.33331298828125,38.5,455.33331298828125,52.5",
+   "href": null
+  },
+  {
+   "class": "numericdisplay_kvp_display_9cd5e498-8822-4078-9128-5d4a9e52bdc0",
+   "shape": "rect",
+   "coords": "31.0999755859375,56.5,127.0999755859375,99.5",
+   "href": null
+  },
+  {
+   "class": "button_kvp_UP_47c9484a-14ff-4e9e-fc30-f1e748406f24",
+   "shape": "rect",
+   "coords": "144.1,30.5,188.1,72.5",
+   "href": null
+  },
+  {
+   "class": "button_kvp_DOWN_1c11a948-814d-446f-db92-fdd4e4044307",
+   "shape": "rect",
+   "coords": "144.0999755859375,76.5,188.0999755859375,116.5",
+   "href": null
+  },
+  {
+   "class": "numericdisplay_ma_display_7a3c1eec-4637-4fa5-d2dc-9dc7ef633e96",
+   "shape": "rect",
+   "coords": "32.0999755859375,169.5,130.0999755859375,214.5",
+   "href": null
+  },
+  {
+   "class": "button_ma_UP_46156b3c-c5df-45c4-eff3-a160d48fa46f",
+   "shape": "rect",
+   "coords": "149.1,146.5,187.1,188.5",
+   "href": null
+  },
+  {
+   "class": "button_ma_DOWN_e35ecf38-343e-4c5d-c304-91cbd2f3fb7a",
+   "shape": "rect",
+   "coords": "147.0999755859375,192.5,186.0999755859375,231.5",
+   "href": null
+  },
+  {
+   "class": "numericdisplay_mas_display_261480d7-9f6e-469a-ae20-57829e0dd713",
+   "shape": "rect",
+   "coords": "35.0999755859375,284.5,132.0999755859375,328.5",
+   "href": null
+  },
+  {
+   "class": "button_mas_UP_acc99900-27d7-44b0-a0da-1ec997781d9c",
+   "shape": "rect",
+   "coords": "147.5999755859375,257.5,189.5999755859375,298.5",
+   "href": null
+  },
+  {
+   "class": "button_mas_DOWN_eb72ff3b-125a-42e1-c26b-02f6b02f8962",
+   "shape": "rect",
+   "coords": "147.5999755859375,302.5,188.5999755859375,344.5",
+   "href": null
+  }
+ ]
+}

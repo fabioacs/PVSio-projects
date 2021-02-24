@@ -1,0 +1,600 @@
+{
+ "descriptor": {
+  "file_type": "emdl",
+  "version": "2.0",
+  "description": "emucharts model",
+  "chart_name": "equip_rx"
+ },
+ "chart": {
+  "states": [
+   {
+    "id": "X1",
+    "name": "off",
+    "color": "gray",
+    "width": 36,
+    "height": 36,
+    "x": 334,
+    "y": 205,
+    "enter": "",
+    "exit": "",
+    "pmr": [],
+    "widgets": [],
+    "components": []
+   },
+   {
+    "id": "X2",
+    "name": "on",
+    "color": "lightgreen",
+    "width": 36,
+    "height": 36,
+    "x": 673,
+    "y": 202,
+    "enter": "",
+    "exit": "",
+    "pmr": [],
+    "widgets": [],
+    "components": []
+   }
+  ],
+  "transitions": [
+   {
+    "id": "T1",
+    "name": "click_on_off{led_on:=on}",
+    "source": {
+     "id": "X1",
+     "name": "off",
+     "color": "gray",
+     "width": 36,
+     "height": 36,
+     "x": 334,
+     "y": 205,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 500,
+     "y": 131
+    }
+   },
+   {
+    "id": "T2",
+    "name": "click_on_off{led_on:=off}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X1",
+     "name": "off",
+     "color": "gray",
+     "width": 36,
+     "height": 36,
+     "x": 334,
+     "y": 205,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 505,
+     "y": 262
+    }
+   },
+   {
+    "id": "T3",
+    "name": "click_kvp_UP[kvp_display=125]{kvp_display:=40}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 725,
+     "y": 83.5
+    }
+   },
+   {
+    "id": "T4",
+    "name": "click_kvp_UP[kvp_display<125]{kvp_display:=kvp_display+1;}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 739,
+     "y": 110.5
+    }
+   },
+   {
+    "id": "T5",
+    "name": "click_kvp_DOWN[kvp_display=40]{kvp_display:=125}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 754,
+     "y": 138.5
+    }
+   },
+   {
+    "id": "T6",
+    "name": "click_kvp_DOWN[kvp_display>40]{kvp_display:=kvp_display-1;}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 774,
+     "y": 165.5
+    }
+   },
+   {
+    "id": "T7",
+    "name": "click_ma_UP[ma_display=630]{ma_display:=80}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 798,
+     "y": 193.5
+    }
+   },
+   {
+    "id": "T8",
+    "name": "click_ma_UP[ma_display<630]{ma_display:=ma_display+1;}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 802,
+     "y": 211.5
+    }
+   },
+   {
+    "id": "T9",
+    "name": "click_ma_DOWN[ma_display=80]{ma_display:=630}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 797,
+     "y": 239.5
+    }
+   },
+   {
+    "id": "T10",
+    "name": "click_ma_DOWN[ma_display>80]{ma_display:=ma_display-1;}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 782,
+     "y": 268.5
+    }
+   },
+   {
+    "id": "T11",
+    "name": "click_mas_UP[mas_display>=500]{mas_display:=0.32}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 776,
+     "y": 294.5
+    }
+   },
+   {
+    "id": "T12",
+    "name": "click_mas_UP[mas_display<500]{mas_display:=mas_display+10.56;}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 774,
+     "y": 322.5
+    }
+   },
+   {
+    "id": "T13",
+    "name": "click_mas_DOWN[mas_display=0.32]{mas_display:=500}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 766,
+     "y": 354.5
+    }
+   },
+   {
+    "id": "T14",
+    "name": "click_mas_DOWN[mas_display>0.32]{mas_display:=mas_display-10.56;}",
+    "source": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "target": {
+     "id": "X2",
+     "name": "on",
+     "color": "lightgreen",
+     "width": 36,
+     "height": 36,
+     "x": 673,
+     "y": 202,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    },
+    "controlPoint": {
+     "x": 755,
+     "y": 384.5
+    }
+   }
+  ],
+  "initial_transitions": [
+   {
+    "id": "IT1",
+    "name": "",
+    "target": {
+     "id": "X1",
+     "name": "off",
+     "color": "gray",
+     "width": 36,
+     "height": 36,
+     "x": 334,
+     "y": 205,
+     "enter": "",
+     "exit": "",
+     "pmr": [],
+     "widgets": [],
+     "components": []
+    }
+   }
+  ],
+  "variables": [
+   {
+    "id": "VAR_kvp_display:real(Local)",
+    "name": "kvp_display",
+    "type": "real",
+    "value": "40",
+    "scope": "Local"
+   },
+   {
+    "id": "VAR_ma_display:real(Local)",
+    "name": "ma_display",
+    "type": "real",
+    "value": "80",
+    "scope": "Local"
+   },
+   {
+    "id": "VAR_mas_display:real(Local)",
+    "name": "mas_display",
+    "type": "real",
+    "value": "0.32",
+    "scope": "Local"
+   },
+   {
+    "id": "VAR_led_on:Mode(Local)",
+    "name": "led_on",
+    "type": "Mode",
+    "value": "off",
+    "scope": "Local"
+   }
+  ],
+  "constants": [],
+  "datatypes": [],
+  "pmr": {},
+  "isPIM": false
+ }
+}

@@ -1,0 +1,136 @@
+equip_rx: THEORY
+ BEGIN IMPORTING pvsioweb_utils
+  %-- operating modes
+  Mode: TYPE = { off, on }
+
+  %-- state attributes
+  State: TYPE = [#
+    current_mode: Mode,
+    previous_mode: Mode,
+    kvp_display: real,
+    led_on: Mode,
+    ma_display: real,
+    mas_display: real
+  #]
+
+  %-- init function
+  init(x: real): State = (#
+    previous_mode := off, 
+    current_mode := off, 
+    kvp_display := 40, 
+    led_on := off, 
+    ma_display := 80, 
+    mas_display := 0.32
+  #)
+
+  %-- leave/enter functions
+  enter(m: Mode)(st: State): State = st WITH [ current_mode := m ]
+  leave(m: Mode)(st: State): State = st WITH [ current_mode := m ]
+
+  %-- triggers
+  per_click_kvp_DOWN(st: State): bool = (current_mode(st) = on AND ( kvp_display(st) = 40 ))
+    OR (current_mode(st) = on AND ( kvp_display(st) > 40 ))
+  click_kvp_DOWN(st: (per_click_kvp_DOWN)): State =
+    COND
+     current_mode(st) = on AND ( kvp_display(st) = 40 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ kvp_display := 125 ]
+          IN enter(on)(st),
+     current_mode(st) = on AND ( kvp_display(st) > 40 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ kvp_display := kvp_display(st) - 1 ]
+          IN enter(on)(st),
+     ELSE -> st
+    ENDCOND
+
+  per_click_kvp_UP(st: State): bool = (current_mode(st) = on AND ( kvp_display(st) < 125 ))
+    OR (current_mode(st) = on AND ( kvp_display(st) = 125 ))
+  click_kvp_UP(st: (per_click_kvp_UP)): State =
+    COND
+     current_mode(st) = on AND ( kvp_display(st) < 125 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ kvp_display := kvp_display(st) + 1 ]
+          IN enter(on)(st),
+     current_mode(st) = on AND ( kvp_display(st) = 125 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ kvp_display := 40 ]
+          IN enter(on)(st),
+     ELSE -> st
+    ENDCOND
+
+  per_click_ma_DOWN(st: State): bool = (current_mode(st) = on AND ( ma_display(st) = 80 ))
+    OR (current_mode(st) = on AND ( ma_display(st) > 80 ))
+  click_ma_DOWN(st: (per_click_ma_DOWN)): State =
+    COND
+     current_mode(st) = on AND ( ma_display(st) = 80 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ ma_display := 630 ]
+          IN enter(on)(st),
+     current_mode(st) = on AND ( ma_display(st) > 80 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ ma_display := ma_display(st) - 1 ]
+          IN enter(on)(st),
+     ELSE -> st
+    ENDCOND
+
+  per_click_ma_UP(st: State): bool = (current_mode(st) = on AND ( ma_display(st) < 630 ))
+    OR (current_mode(st) = on AND ( ma_display(st) = 630 ))
+  click_ma_UP(st: (per_click_ma_UP)): State =
+    COND
+     current_mode(st) = on AND ( ma_display(st) < 630 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ ma_display := ma_display(st) + 1 ]
+          IN enter(on)(st),
+     current_mode(st) = on AND ( ma_display(st) = 630 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ ma_display := 80 ]
+          IN enter(on)(st),
+     ELSE -> st
+    ENDCOND
+
+  per_click_mas_DOWN(st: State): bool = (current_mode(st) = on AND ( mas_display(st) = 0.32 ))
+    OR (current_mode(st) = on AND ( mas_display(st) > 0.32 ))
+  click_mas_DOWN(st: (per_click_mas_DOWN)): State =
+    COND
+     current_mode(st) = on AND ( mas_display(st) = 0.32 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ mas_display := 500 ]
+          IN enter(on)(st),
+     current_mode(st) = on AND ( mas_display(st) > 0.32 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ mas_display := mas_display(st) - 10.56 ]
+          IN enter(on)(st),
+     ELSE -> st
+    ENDCOND
+
+  per_click_mas_UP(st: State): bool = (current_mode(st) = on AND ( mas_display(st) < 500 ))
+    OR (current_mode(st) = on AND ( mas_display(st) >= 500 ))
+  click_mas_UP(st: (per_click_mas_UP)): State =
+    COND
+     current_mode(st) = on AND ( mas_display(st) < 500 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ mas_display := mas_display(st) + 10.56 ]
+          IN enter(on)(st),
+     current_mode(st) = on AND ( mas_display(st) >= 500 )
+      -> LET st = leave(on)(st),
+             st = st WITH [ mas_display := 0.32 ]
+          IN enter(on)(st),
+     ELSE -> st
+    ENDCOND
+
+  per_click_on_off(st: State): bool = (current_mode(st) = on)
+    OR (current_mode(st) = off)
+  click_on_off(st: (per_click_on_off)): State =
+    COND
+     current_mode(st) = on
+      -> LET st = leave(on)(st),
+             st = st WITH [ led_on := off ]
+          IN enter(off)(st),
+     current_mode(st) = off
+      -> LET st = leave(off)(st),
+             st = st WITH [ led_on := on ]
+          IN enter(on)(st),
+     ELSE -> st
+    ENDCOND
+
+ END equip_rx

@@ -1,0 +1,11 @@
+
+Context changed to ~/PVS/pvsio-web/examples/projects/prototipo_raioX/pvs/
+Parsing equip_rx
+equip_rx parsed in 0.07 seconds
+Typechecking equip_rx
+Parsing pvsioweb_utils
+pvsioweb_utils parsed in 0.01 seconds
+pvsioweb_utils is already parsed
+Typechecking pvsioweb_utils
+pvsioweb_utils typechecked in 0.19s: 6 TCCs, 0 proved, 0 subsumed, 6 unproved; 2 msgs
+equip_rx typechecked in 0.47s: 7 TCCs, 0 proved, 0 subsumed, 7 unproved; 28 msgs
